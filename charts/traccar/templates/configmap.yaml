@@ -389,6 +389,37 @@ data:
 {{- end }}
 {{- end }}
 {{- end }}
+
+{{- if .Values.traccar.openid }}
+{{- if .Values.traccar.openid.force }}
+        <entry key='openid.force'>{{ .Values.traccar.openid.force }}</entry>
+{{- end }}
+{{- if .Values.traccar.openid.clientId }}
+        <entry key='openid.clientId'>{{ .Values.traccar.openid.clientId }}</entry>
+{{- end }}
+{{- if .Values.traccar.openid.clientSecret }}
+        <entry key='openid.clientSecret'>{{ .Values.traccar.openid.clientSecret }}</entry>
+{{- end }}
+{{- if .Values.traccar.openid.issuerUrl }}
+        <entry key='openid.issuerUrl'>{{ .Values.traccar.openid.issuerUrl }}</entry>
+{{- end }}
+{{- if .Values.traccar.openid.authUrl }}
+        <entry key='openid.authUrl'>{{ .Values.traccar.openid.authUrl }}</entry>
+{{- end }}
+{{- if .Values.traccar.openid.tokenUrl }}
+        <entry key='openid.tokenUrl'>{{ .Values.traccar.openid.tokenUrl }}</entry>
+{{- end }}
+{{- if .Values.traccar.openid.userInfoUrl }}
+        <entry key='openid.userInfoUrl'>{{ .Values.traccar.openid.userInfoUrl }}</entry>
+{{- end }}
+{{- if .Values.traccar.openid.allowGroup }}
+        <entry key='openid.allowGroup'>{{ .Values.traccar.openid.allowGroup }}</entry>
+{{- end }}
+{{- if .Values.traccar.openid.adminGroup }}
+        <entry key='openid.adminGroup'>{{ .Values.traccar.openid.adminGroup }}</entry>
+{{- end }}
+{{- end }}
+
 {{- if (index .Values "redis-ha").enabled }}
         <entry key='broadcast.type'>redis</entry>
         <entry key='broadcast.address'>redis://{{ include "traccar.fullname" . }}-redis-ha-haproxy:6379</entry>
