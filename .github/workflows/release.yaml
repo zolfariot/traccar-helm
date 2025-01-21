@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - zolfa_fork
 
 jobs:
   release:
